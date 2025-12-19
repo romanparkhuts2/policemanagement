@@ -1,0 +1,70 @@
+﻿@model PoliceProject.Models.Report
+
+<h1 class="mt-4">Crea denuncia</h1>
+
+<h4>Inserisci dati</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data"> 
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Tipologia:</label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="ReportDate" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo oggetto:</label>
+                <select asp-for="IdObjectType" class ="form-control" asp-items="ViewBag.IdObjectType"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Descrizione</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data dell'accaduto</label>
+                <input type="date" asp-for="IncidentDate" class="form-control" />
+                <span asp-validation-for="IncidentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Persona</label>
+                <select asp-for="IdPerson" class ="form-control" asp-items="ViewBag.IdPerson"></select>
+                <span asp-validation-for="IdPerson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Immagine (286x180)</label>
+                <input type="file" asp-for="FileUpload" class="form-control" />
+                <span asp-validation-for="FileUpload" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nome dell'agente</label>
+                <input asp-for="AgentName" class="form-control" />
+                <span asp-validation-for="AgentName" class="text-danger"></span>
+            </div>
+@*             <div class="form-group form-check mt-2">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Solved" /> Risolto
+                </label>
+            </div> *@
+            <div class="form-group mt-4">
+                <input class="btn btn-success" type="submit" value="Crea" />
+                <a class="btn btn-primary" asp-action="Index">Torna indietro</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <img src="https://loremflickr.com/800/600/police"
+             class="img-fluid rounded shadow"
+             alt="Immagine polizia casuale" />
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+ 

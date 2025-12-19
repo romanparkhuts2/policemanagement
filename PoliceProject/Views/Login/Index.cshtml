@@ -1,0 +1,38 @@
+﻿@using System.Security.Claims
+@model PoliceProject.Models.Login
+
+@{
+    var ErroreAutentication = ViewData["Errore"];
+}
+
+<form method="post">
+    <div class="container d-flex justify-content-center align-items-center pt-5">
+        <div class="card shadow" style="width:400px">
+            <h3 class="text-center mt-3">Login</h3>
+            <div class="mx-5">
+                <label class="form-label" asp-for="Username">Username</label>
+                <input type="text" class="form-control" asp-for="Username">
+            </div>
+            <div class="mx-5 mt-2">
+                <label class="form-label" asp-for="Password">Password</label>
+                <input type="password" class="form-control" asp-for="Password">
+            </div>
+            @if (ErroreAutentication != null)
+            {
+                //SE NON VA VEDE LO SPAZIO DEL PADDING DELL ALERT BASTA FARE style="padding-top: 4px; padding-bottom: 4px;"
+                <div class="alert alert-danger rounded-2 mx-5 mt-3 mb-0" style="padding-top: 4px; padding-bottom: 4px;">
+                    Username e/o password errati
+                </div>
+
+            }
+            <div class="mx-5 mt-2">
+                <label class="form-label" asp-for="IsPersistent">Ricordami su questo dispositivo</label>
+                <input type="checkbox" asp-for="IsPersistent">
+            </div>
+            <div class="text-center mb-3 mt-2">
+                <button type="submit" class="btn btn-success">Accedi</button>
+            </div>
+        </div>
+    </div>
+</form> 
+ 

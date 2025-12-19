@@ -1,0 +1,50 @@
+﻿@model PoliceProject.Models.RecoveredItem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h1 class="mt-4">Elimina ritrovamento</h1>
+
+<h4>Visualizza dati</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <label class="control-label">Data di ritrovo:</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FoundDate)
+        </dd>
+        <dt class = "col-sm-2">
+            <label class="control-label">Descrizione:</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            <label class="control-label">Persona:</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdPersonNavigation.NomeCompleto)
+        </dd>
+        <dt class = "col-sm-2">
+            <label class="control-label">Denuncia:</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdReportNavigation.ReportCompleto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdRecoveredItem" />
+        <input type="hidden" asp-for="FoundDate" />
+        <input type="hidden" asp-for="IdPerson" />
+        <input type="hidden" asp-for="Description" />
+        <input type="hidden" asp-for="IdReport" />
+        <input type="submit" value="Conferma" class="btn btn-danger" /> 
+        <a class="btn btn-primary"  asp-action="Index">Torna Indietro</a>
+    </form>
+</div>
+
