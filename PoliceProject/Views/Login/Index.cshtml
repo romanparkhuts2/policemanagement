@@ -19,20 +19,17 @@
             </div>
             @if (ErroreAutentication != null)
             {
-                //SE NON VA VEDE LO SPAZIO DEL PADDING DELL ALERT BASTA FARE style="padding-top: 4px; padding-bottom: 4px;"
                 <div class="alert alert-danger rounded-2 mx-5 mt-3 mb-0" style="padding-top: 4px; padding-bottom: 4px;">
-                    Username e/o password errati
+                    Invalid username and/or password
                 </div>
-
             }
             <div class="mx-5 mt-2">
-                <label class="form-label" asp-for="IsPersistent">Ricordami su questo dispositivo</label>
+                <label class="form-label" asp-for="IsPersistent">Remember me on this device</label>
                 <input type="checkbox" asp-for="IsPersistent">
             </div>
             <div class="text-center mb-3 mt-2">
-                <button type="submit" class="btn btn-success">Accedi</button>
+                <button type="submit" class="btn btn-success">Sign in</button>
             </div>
         </div>
     </div>
-</form> 
- 
+</form>

@@ -1,12 +1,9 @@
 ﻿@model PoliceProject.Models.Person
-
 @{
     ViewData["Title"] = "CreatePerson";
 }
-
-<h1 class="mt-4">Inserisci anagrafica persona</h1>
-
-<h4>Inserisci dati</h4>
+<h1 class="mt-4">Create person registry</h1>
+<h4>Enter data</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,49 +11,49 @@
             @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label class="control-label">Nome</label>
+                <label class="control-label">Name</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Cognome</label>
+                <label class="control-label">Surname</label>
                 <input asp-for="Surname" class="form-control" />
                 <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Residenza</label>
+                <label class="control-label">Residence</label>
                 <input asp-for="Residence" class="form-control" />
                 <span asp-validation-for="Residence" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Indirizzo</label>
+                <label class="control-label">Address</label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Numero telefono</label>
+                <label class="control-label">Phone number</label>
                 <input asp-for="Tel" class="form-control" />
                 <span asp-validation-for="Tel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Tipo documento</label>
+                <label class="control-label">Document type</label>
                 <input asp-for="DocumentType" class="form-control" />
                 <span asp-validation-for="DocumentType" class="text-danger"></span>
             </div>
             <div class="form-group mt-4">
-                <input class="btn btn-success" type="submit" value="Crea" />
-                <a class="btn btn-primary" asp-action="Index">Torna indietro</a>
+                <input class="btn btn-success" type="submit" value="Create" />
+                <a class="btn btn-primary" asp-action="Index">Go back</a>
             </div>
         </form>
     </div>
     <div class="col-md-8">
         <img src="https://loremflickr.com/800/600/police"
              class="img-fluid rounded shadow"
-             alt="Immagine polizia casuale" />
+             alt="Random police image" />
     </div>
 </div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
- 

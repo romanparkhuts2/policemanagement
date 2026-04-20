@@ -1,12 +1,9 @@
 ﻿@model PoliceProject.Models.RecoveredItem
-
 @{
     ViewData["Title"] = "Modify";
 }
-
-<h1 class="mt-4">Modifica ritrovamento</h1>
-
-<h4>Inserisci dati</h4>
+<h1 class="mt-4">Edit recovery</h1>
+<h4>Enter data</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,17 +12,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdRecoveredItem" />
             <div class="form-group">
-                <label class="control-label">Data di ritrovo:</label>
+                <label class="control-label">Recovery date:</label>
                 <input type="date" asp-for=" FoundDate" class="form-control" />
                 <span asp-validation-for="FoundDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Persona:</label>
+                <label class="control-label">Person:</label>
                 <select asp-for="IdPerson" class="form-control" asp-items="ViewBag.IdPerson"></select>
                 <span asp-validation-for="IdPerson" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Descrizione:</label>
+                <label class="control-label">Description:</label>
                 <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
@@ -33,18 +30,19 @@
                 <input type="hidden" asp-for="IdReport" />
             </div>
             <div class="form-group mt-4">
-                <input class="btn btn-success" type="submit" value="Modifica" />
-                <a class="btn btn-primary" asp-action="Index">Torna indietro</a>
+                <input class="btn btn-success" type="submit" value="Edit" />
+                <a class="btn btn-primary" asp-action="Index">Go back</a>
             </div>
         </form>
     </div>
     <div class="col-md-8">
         <img src="https://loremflickr.com/800/600/police"
              class="img-fluid rounded shadow"
-             alt="Immagine polizia casuale" />
+             alt="Random police image" />
     </div>
 </div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

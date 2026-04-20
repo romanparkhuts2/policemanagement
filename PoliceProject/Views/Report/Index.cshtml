@@ -8,15 +8,15 @@
 <div class="mt-4 mb-5 text-center">
     <div class="row align-items-center">
         <div class="col-md-12">
-            <h2 class="mb-3">Benvenuto nel Portale di Polizia</h2>
+            <h2 class="mb-3">Welcome to the Police Portal</h2>
             <p class="lead" style="display:inline;">
-                <strong>Gestisci denunce, ritrovamenti e persone in modo semplice e veloce. Abbiamo il </strong>
+                <strong>Manage reports, findings and people simply and quickly. We have a </strong>
             </p>
             <span style="display:inline; font-size: 24px; font-weight:450;" class="lead text-success"><strong>@percentuale%</strong></span>
-            <p style="display:inline;" class="lead"><strong> di ritrovamenti!</strong></p><br />
+            <p style="display:inline;" class="lead"><strong> recovery rate!</strong></p><br />
             <div class="mt-2">
-                <a href="/Report/Create" class="btn btn-success me-2 text-white">Inserisci Denuncia</a>
-                <a href="/Recovered/Create" class="btn btn-warning text-white">Inserisci Ritrovo</a>
+                <a href="/Report/Create" class="btn btn-success me-2 text-white">Create Report</a>
+                <a href="/Recovered/Create" class="btn btn-warning text-white">Insert Recovery</a>
             </div>
         </div>
     </div>
@@ -24,55 +24,61 @@
 
 <div class="card bg-primary">
     <div style="color:ghostwhite" class="card-header text-center">
-        <h1>Denunce</h1>
-        </div>
+        <h1>Reports</h1>
+    </div>
 </div>
 
 <div class="d-flex justify-content-between align-items-center mt-2">
     <div class="d-flex gap-2">
-        <a href="/Report/Create" class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-  <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"/>
-  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
-</svg>  Crea Denuncia</a>
-        <a href="/Report/CreatePerson" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-  <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"/>
-  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
-</svg>  Inserisci Persona</a>
+        <a href="/Report/Create" class="btn btn-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />
+                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
+            </svg>  Create Report
+        </a>
+        <a href="/Report/CreatePerson" class="btn btn-warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />
+                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
+            </svg>  Add Person
+        </a>
     </div>
 
     <div class="d-flex gap-3">
         <form method="get">
             <div class="d-flex align-items-center gap-2">
-                <label for="type" class="mb-0">Filtra Oggetto:</label>
+                <label for="type" class="mb-0">Filter Object:</label>
                 <select asp-items="ViewBag.IdObjectType" name="type" class="list-group-item" style="padding-top: 3px; padding-bottom: 3px;"></select>
-                <input type="submit" value="Filtra" class="btn btn-primary" style="padding-top: 3px; padding-bottom: 3px;" />
+                <input type="submit" value="Filter" class="btn btn-primary" style="padding-top: 3px; padding-bottom: 3px;" />
             </div>
         </form>
 
         <form method="get">
             <div class="d-flex align-items-center gap-2">
-                <label for="data" class="mb-0">Filtra Data:</label>
+                <label for="data" class="mb-0">Filter Date:</label>
                 <input type="date" name="data" id="data" />
-                <input type="submit" value="Filtra" class="btn btn-primary" style="padding-top: 3px; padding-bottom: 3px;" />
+                <input type="submit" value="Filter" class="btn btn-primary" style="padding-top: 3px; padding-bottom: 3px;" />
             </div>
         </form>
     </div>
 </div>
 
 <div class="row">
-    @foreach(Report report in Model){
+    @foreach (Report report in Model)
+    {
         <div class="col-4">
             <div class="card shadow mt-3">
-                <img class="card-img-bottom" src="@report.ImageFileUrl" alt="Immagine non diponibile"/>
+                <img class="card-img-bottom" src="@report.ImageFileUrl" alt="Image not available" />
                 <h5 class="card-header">@report.Type</h5>
                 <div class="card-body">
-                    <div><b>Data registrazione</b> @report.ReportDate</div>
-                    <div><b>Data dell'accaduto</b> @report.IncidentDate</div>
-                    <div><b>Nome cittadino</b> @report.IdPersonNavigation.Name</div>
-                    <div><b>Cognome cittadino</b> @report.IdPersonNavigation.Surname</div>
-                    <div><b>Archiviato:</b> @if (report.Solved)
+                    <div><b>Registration date</b> @report.ReportDate</div>
+                    <div><b>Incident date</b> @report.IncidentDate</div>
+                    <div><b>Citizen name</b> @report.IdPersonNavigation.Name</div>
+                    <div><b>Citizen surname</b> @report.IdPersonNavigation.Surname</div>
+                    <div>
+                        <b>Archived:</b> @if (report.Solved)
                         {
-                            <p style="color:forestgreen"><b>Si</b></p>
+                            <p style="color:forestgreen"><b>Yes</b></p>
                         }else
                         {
                             <p style="color:red"><b>No</b></p>
@@ -82,10 +88,10 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                        </svg>  Modifica
+                        </svg>  Edit
                     </a>
                 </div>
             </div>
         </div>
     }
-</div> 
+</div>

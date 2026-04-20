@@ -1,12 +1,9 @@
 ﻿@model PoliceProject.Models.Report
-
 @{
     ViewData["Title"] = "Modify";
 }
-
-<h1 class="mt-4">Modifica denuncia</h1>
-
-<h4>Inserisci dati</h4>
+<h1 class="mt-4">Edit report</h1>
+<h4>Enter data</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,7 +12,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdReport" />
             <div class="form-group">
-                <label class="control-label">Tipologia:</label>
+                <label class="control-label">Type:</label>
                 <input asp-for="Type" class="form-control" />
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
@@ -23,21 +20,22 @@
                 <input type="hidden" asp-for="ReportDate" />
             </div>
             <div class="form-group">
-                <label class="control-label">Tipo oggetto:</label>                <select asp-for="IdObjectType" class="form-control" asp-items="ViewBag.IdObjectType"></select>
+                <label class="control-label">Object type:</label>
+                <select asp-for="IdObjectType" class="form-control" asp-items="ViewBag.IdObjectType"></select>
                 <span asp-validation-for="IdObjectType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Descrizione</label>
+                <label class="control-label">Description</label>
                 <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Data dell'accaduto</label>
+                <label class="control-label">Incident date</label>
                 <input type="date" asp-for="IncidentDate" class="form-control" />
                 <span asp-validation-for="IncidentDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Persona</label>
+                <label class="control-label">Person</label>
                 <select asp-for="IdPerson" class="form-control" asp-items="ViewBag.IdPerson"></select>
                 <span asp-validation-for="IdPerson" class="text-danger"></span>
             </div>
@@ -45,7 +43,7 @@
                 <input type="hidden" asp-for="ImageFileUrl" />
             </div>
             <div class="form-group">
-                <label class="control-label">Nome dell'agente</label>
+                <label class="control-label">Agent name</label>
                 <input asp-for="AgentName" class="form-control" />
                 <span asp-validation-for="AgentName" class="text-danger"></span>
             </div>
@@ -53,19 +51,19 @@
                 <input type="hidden" asp-for="Solved" />
             </div>
             <div class="form-group mt-4">
-                <input type="submit" value="Salva" class="btn btn-success" />
-                <a asp-action="Index" class="btn btn-primary">Torna indietro</a>
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">Go back</a>
             </div>
         </form>
     </div>
     <div class="col-md-8">
         <img src="https://loremflickr.com/800/600/police"
              class="img-fluid rounded shadow"
-             alt="Immagine polizia casuale" />
+             alt="Random police image" />
     </div>
 </div>
-
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
