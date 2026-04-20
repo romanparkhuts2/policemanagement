@@ -8,16 +8,16 @@ recovered items, and citizen registries in a simple and efficient way.
 ## 🖥️ Application Preview
 
 ### 🏠 Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](PoliceProject/docs/screenshots/dashboard.png)
 
-### 📄 Reports
-![Reports](docs/screenshots/recoveries.png)
+### 📄 Recoveries
+![Reports](PoliceProject/docs/screenshots/recoveries.png)
 
 ### ➕ Create Report
-![Create](docs/screenshots/createreport.png)
+![Create](PoliceProject/docs/screenshots/createreport.png)
 
 ### 🔑 Login
-![Login](docs/screenshots/login.png)
+![Login](PoliceProject/docs/screenshots/login.png)
 
 ---
 
